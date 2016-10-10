@@ -13,7 +13,7 @@ Namespace GroupDocsComparisonExamples.VisualBasic
 
         'ExStart:CompareTextDcumentsFromStreamToFile
         ''' <summary>
-        ''' Compare two Text processing documents from streams with saving results into a file
+        ''' Compare two Text documents from streams with saving results into a file
         ''' </summary>
         Public Shared Sub CompareTextDcumentsFromStreamToFile()
             ' Create two streams of documents
@@ -31,7 +31,7 @@ Namespace GroupDocsComparisonExamples.VisualBasic
 
         'ExStart:CompareTextDcumentsFromPathToFile
         ''' <summary>
-        ''' Compare two Text processing documents from file path with saving results into a file
+        ''' Compare two Text documents from file path with saving results into a file
         ''' </summary>
         Public Shared Sub CompareTextDcumentsFromPathToFile()
             ' Get instance of GroupDocs.Comparison.Comparison and call method Compare.
@@ -42,7 +42,7 @@ Namespace GroupDocsComparisonExamples.VisualBasic
 
         'ExStart:CompareTextDcumentsFromStreamToFileWithSettings
         ''' <summary>
-        ''' Compare two Text processing documents from streams with saving results into a file with documen settings
+        ''' Compare two Text documents from streams with saving results into a file with documen settings
         ''' </summary>
         Public Shared Sub CompareTextDcumentsFromStreamToFileWithSettings()
             ' Create two streams of documents
@@ -60,7 +60,7 @@ Namespace GroupDocsComparisonExamples.VisualBasic
 
         'ExStart:CompareTextDcumentsFromPathToFileWithSettings
         ''' <summary>
-        ''' Compare two Text processing documents from file path with saving results into a file with document settings
+        ''' Compare two Text documents from file path with saving results into a file with document settings
         ''' </summary>
         Public Shared Sub CompareTextDcumentsFromPathToFileWithSettings()
             ' Get instance of GroupDocs.Comparison.Comparison and call method Compare.

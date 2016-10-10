@@ -13,7 +13,7 @@ namespace GroupDocs.Comparison.Examples.CSharp
     {
         //ExStart:CompareTextDcumentsFromStreamToFile
         /// <summary>
-        /// Compare two Text processing documents from streams with saving results into a file
+        /// Compare two Text documents from streams with saving results into a file
         /// </summary>
         public static void CompareTextDcumentsFromStreamToFile()
         {
@@ -32,19 +32,34 @@ namespace GroupDocs.Comparison.Examples.CSharp
 
         //ExStart:CompareTextDcumentsFromPathToFile
         /// <summary>
-        /// Compare two Text processing documents from file path with saving results into a file
+        /// Compare two Text documents from file path with saving results into a file
         /// </summary>
         public static void CompareTextDcumentsFromPathToFile()
         {
             // Get instance of GroupDocs.Comparison.Comparison and call method Compare.
             GroupDocs.Comparison.Comparison comparison = Common.getComparison();
             Stream result = comparison.Compare(Path.Combine(Common.sourcePath, Common.sourceFile), Path.Combine(Common.targetPath, Common.targetFile), Path.Combine(Common.resultPath, Common.resultFile), ComparisonType.Text);
+
+            // get changes
+            GroupDocs.Comparison.Common.Changes.ChangeInfo[] changeInfo = comparison.GetChanges();
+
+            foreach (GroupDocs.Comparison.Common.Changes.ChangeInfo change in changeInfo)
+            {
+                Console.WriteLine("Text: " + change.Text);
+                // update change with custom text
+                change.Text = "Added text by update change.";
+            }
+
+            Console.WriteLine("apply changes and display updated stream with changes.");
+            // update changes
+            result = comparison.UpdateChanges(changeInfo, FileType.Txt);
+
         }
         //ExEnd:CompareTextDcumentsFromPathToFile
 
         //ExStart:CompareTextDcumentsFromStreamToFileWithSettings
         /// <summary>
-        /// Compare two Text processing documents from streams with saving results into a file with documen settings
+        /// Compare two Text documents from streams with saving results into a file with documen settings
         /// </summary>
         public static void CompareTextDcumentsFromStreamToFileWithSettings()
         {
@@ -63,7 +78,7 @@ namespace GroupDocs.Comparison.Examples.CSharp
 
         //ExStart:CompareTextDcumentsFromPathToFileWithSettings
         /// <summary>
-        /// Compare two Text processing documents from file path with saving results into a file with document settings
+        /// Compare two Text documents from file path with saving results into a file with document settings
         /// </summary>
         public static void CompareTextDcumentsFromPathToFileWithSettings()
         {
@@ -72,7 +87,7 @@ namespace GroupDocs.Comparison.Examples.CSharp
             Stream result = comparison.Compare(Path.Combine(Common.sourcePath, Common.sourceFile), Path.Combine(Common.targetPath, Common.targetFile), Path.Combine(Common.resultPath, Common.resultFile), ComparisonType.Text, new TextComparisonSettings());
         }
         //ExEnd:CompareTextDcumentsFromPathToFileWithSettings
-    
+
     }
 }
 //ExEnd:TextDcumentsComparisionClass

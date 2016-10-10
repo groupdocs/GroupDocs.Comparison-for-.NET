@@ -28,6 +28,12 @@ Namespace GroupDocsComparisonExamples.VisualBasic
         ' targetFile property to set input target file
         Public Shared targetFile As String = "target.docx"
 
+        ' sourceFilePassword property to set input source file password
+        Public Shared sourceFilePassword As String = "pass"
+
+        ' targetFilePassword property to set input target file password
+        Public Shared targetFilePassword As String = "pass"
+
         ' targetFile property to set input target file
         Public Shared resultFile As String = "result.doc"
 
